@@ -34,7 +34,7 @@ export default function GallerySection() {
               src="/gallery/honda.jpg"
               alt="Honda detail — Pro Room Detailing"
               fill
-              className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+              className="object-cover md:grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
               sizes="(max-width: 768px) 100vw, 70vw"
               priority
             />
@@ -55,7 +55,7 @@ export default function GallerySection() {
                 src="/gallery/bmw.png"
                 alt="BMW interior — Pro Room Detailing"
                 fill
-                className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+                className="object-cover md:grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
                 sizes="(max-width: 768px) 50vw, 30vw"
               />
               <div
@@ -73,7 +73,7 @@ export default function GallerySection() {
                 src="/gallery/mercedes.png"
                 alt="Detailing work — Pro Room Detailing"
                 fill
-                className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+                className="object-cover md:grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
                 sizes="(max-width: 768px) 50vw, 30vw"
               />
               <div
