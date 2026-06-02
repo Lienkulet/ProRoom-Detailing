@@ -35,7 +35,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${robotoCond.variable} h-full antialiased`}
     >
-      <body 
+      <body
       // style={{
       //   backgroundColor: "#0a0a0a",
       //   backgroundImage: [
@@ -47,7 +47,9 @@ export default function RootLayout({
       //   ].join(", "),
       // }}
       >
+        <main>
           {children}
+        </main>
         <Footer />
       </body>
     </html>

@@ -232,6 +232,51 @@ body {
   }
 }
 
+/* ============ PRICELIST CARD ============ */
+.pricelist-arrow {
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.group:hover .pricelist-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@keyframes pricelist-item-in {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    clip-path: inset(0 0 0% 0);
+  }
+}
+
+@keyframes pricelist-item-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+    clip-path: inset(0 0 0% 0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(16px);
+    clip-path: inset(0 0 100% 0);
+  }
+}
+
+.pricelist-item-enter {
+  animation: pricelist-item-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.pricelist-item-exit {
+  animation: pricelist-item-out 0.4s cubic-bezier(0.4, 0, 1, 1) both;
+}
+
 /* ============ TESTIMONIAL ANIMATIONS ============ */
 @keyframes testimonial-slide-in-right {
   from { opacity: 0; transform: translateX(48px); }
