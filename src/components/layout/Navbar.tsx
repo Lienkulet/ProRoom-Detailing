@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import "@/i18n/config";
 import HeroButton from "@/components/UI/HeroButton";
+import HamburgerIcon from "@/components/icons/HamburgerIcon";
 
 const ims = "font-[family-name:var(--font-roboto-condensed)] italic font-bold uppercase";
 
@@ -80,7 +81,7 @@ export default function Navbar() {
             style={{ height: 60, width: "auto" }}
             priority
           />
-          <span className={`${ims} text-white hidden sm:block`} style={{ fontSize: "clamp(13px, 1.3vw, 16px)", letterSpacing: "-0.01em" }}>
+          <span className={`${ims} text-white`} style={{ fontSize: "clamp(12px, 1.3vw, 16px)", letterSpacing: "-0.01em" }}>
             Pro Room<span style={{ color: "#b0b0b0" }}> Detailing</span>
           </span>
         </motion.a>
@@ -182,7 +183,7 @@ export default function Navbar() {
 
         {/* Mobile hamburger */}
         <motion.button
-          className="md:hidden flex flex-col justify-center gap-1.5 w-8 h-8"
+          className="md:hidden flex items-center justify-center w-10 h-10"
           onClick={() => setMenuOpen((v) => !v)}
           aria-label="Toggle menu"
           initial={{ opacity: 0 }}
@@ -190,9 +191,7 @@ export default function Navbar() {
           transition={{ delay: 0.5 }}
           style={{ background: "none", border: "none", cursor: "pointer", padding: 0 }}
         >
-          <span style={{ display: "block", height: 1.5, background: "#fff", borderRadius: 2, transition: "transform 0.3s ease, opacity 0.3s ease", transform: menuOpen ? "translateY(5px) rotate(45deg)" : "none" }} />
-          <span style={{ display: "block", height: 1.5, background: "#fff", borderRadius: 2, transition: "opacity 0.3s ease", opacity: menuOpen ? 0 : 1 }} />
-          <span style={{ display: "block", height: 1.5, background: "#fff", borderRadius: 2, transition: "transform 0.3s ease, opacity 0.3s ease", transform: menuOpen ? "translateY(-5px) rotate(-45deg)" : "none" }} />
+          <HamburgerIcon open={menuOpen} />
         </motion.button>
       </div>
 
@@ -217,26 +216,8 @@ export default function Navbar() {
               overflowY: "auto",
             }}
           >
-            {/* Top bar with close button */}
-            <div
-              className="flex items-center justify-between px-5 shrink-0"
-              style={{ height: 64, borderBottom: "1px solid rgba(255,255,255,0.07)" }}
-            >
-              <a href="/" onClick={() => setMenuOpen(false)} className="flex items-center gap-3" style={{ textDecoration: "none" }}>
-                <span className={`${ims} text-white`} style={{ fontSize: 15 }}>
-                  Pro Room<span style={{ color: "#b0b0b0" }}> Detailing</span>
-                </span>
-              </a>
-              <button
-                onClick={() => setMenuOpen(false)}
-                aria-label="Close menu"
-                style={{ background: "none", border: "none", cursor: "pointer", color: "rgba(255,255,255,0.6)", padding: 4 }}
-              >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-                </svg>
-              </button>
-            </div>
+            {/* Spacer so links start below the fixed navbar header */}
+            <div style={{ height: 64, flexShrink: 0 }} />
 
             {/* Links */}
             <nav className="flex flex-col px-6 pt-10 pb-6 gap-2 flex-1">

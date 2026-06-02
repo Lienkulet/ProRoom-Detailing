@@ -14,7 +14,7 @@ export default function ContactSection() {
   const { t } = useTranslation()
 
   return (
-    <div
+    <section
       className="w-full bg-cover bg-center bg-no-repeat py-16 px-4"
       style={{ backgroundImage: "url('/bg-contact.png')" }}
       id="contact"
@@ -29,7 +29,7 @@ export default function ContactSection() {
         {/* Info */}
         <AnimateIn variant="slide-right" delay={0.15} className="flex flex-col justify-start w-full md:w-[70%] overflow-hidden backdrop-blur-md">
           {/* Address block */}
-          <div className="flex flex-col gap-3 px-8 pt-8 pb-6">
+          <div className="flex flex-col gap-3 px-0 md:px-8 md:pt-8 pb-6">
             <h2
               className={`${ims} m-0 text-[#b0b0b0] leading-none tracking-[-0.2rem]`}
               style={{ fontSize: "clamp(52px, 7vw, 80px)", textShadow: "2px 14px 30px rgba(0,0,0,0.7)" }}
@@ -74,6 +74,6 @@ export default function ContactSection() {
           </div>
         </AnimateIn>
       </section>
-    </div>
+    </section>
   )
 }
