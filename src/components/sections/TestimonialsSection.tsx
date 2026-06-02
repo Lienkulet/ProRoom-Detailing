@@ -83,7 +83,7 @@ export default function TestimonialsSection() {
   );
 
   return (
-    <section style={{ backgroundColor: "#0a0a0a", padding: "80px 0", overflow: "hidden" }}>
+    <section style={{ backgroundColor: "#0a0a0a", padding: "80px 0", overflow: "hidden" }} id="testimonials">
       {/* Heading */}
       <Container>
       <div className=" text-center" style={{ marginBottom: 56 }}>

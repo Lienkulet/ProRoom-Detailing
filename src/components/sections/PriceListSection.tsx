@@ -32,6 +32,7 @@ export default function PricelistSection() {
         backgroundPosition: "center",
         backgroundAttachment: "fixed",
       }}
+      id="services"
     >
       <Container>
         <div className="text-center mb-10">

@@ -12,6 +12,7 @@ export default function ContactSection() {
     <div
       className="w-full bg-cover bg-center bg-no-repeat py-16 px-4"
       style={{ backgroundImage: "url('/bg-contact.png')" }}
+      id="contact"
     >
       <section className="flex flex-col gap-4 md:flex-row max-w-[1180px] mx-auto p-4 border border-[#414141]">
 
@@ -50,7 +51,7 @@ export default function ContactSection() {
           >
             {/* Call Us */}
             <a
-              href="tel:12033454647"
+              href="tel:+37367666600"
               className="flex flex-col items-center justify-around flex-1 py-7 px-4 no-underline transition-opacity hover:opacity-75"
             >
               <strong
@@ -64,7 +65,7 @@ export default function ContactSection() {
                 className={`${ims} text-white`}
                 style={{ fontSize: "clamp(14px, 1.6vw, 24px)", lineHeight: "24px" }}
               >
-                1 - 203 - 345 - 4647
+                +373-67-666-600
               </strong>
             </a>
 
@@ -73,7 +74,7 @@ export default function ContactSection() {
 
             {/* Email Us */}
             <a
-              href="mailto:info@imsperformance.com"
+              href="mailto:proroomdetailing@gmail.com"
               className="flex flex-col items-center justify-around flex-1 py-7 px-4 no-underline transition-opacity hover:opacity-75"
             >
               <strong
@@ -87,7 +88,7 @@ export default function ContactSection() {
                 className={`${ims} text-white text-center break-all`}
                 style={{ fontSize: "clamp(12px, 1.4vw, 24px)", lineHeight: "24px" }}
               >
-                info@imsperformance.com
+                proroomdetailing@gmail.com
               </strong>
             </a>
           </div>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
+import Navbar from "@/components/layout/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,18 +36,8 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${robotoCond.variable} h-full antialiased`}
     >
-      <body
-      // style={{
-      //   backgroundColor: "#0a0a0a",
-      //   backgroundImage: [
-      //     "radial-gradient(ellipse at 15% 85%, rgba(32,32,32,0.9) 0%, transparent 45%)",
-      //     "radial-gradient(ellipse at 80% 10%, rgba(28,28,28,0.85) 0%, transparent 40%)",
-      //     "radial-gradient(ellipse at 60% 60%, rgba(24,24,24,0.8) 0%, transparent 50%)",
-      //     "radial-gradient(ellipse at 90% 75%, rgba(30,30,30,0.75) 0%, transparent 38%)",
-      //     "radial-gradient(ellipse at 30% 30%, rgba(26,26,26,0.75) 0%, transparent 42%)",
-      //   ].join(", "),
-      // }}
-      >
+      <body>
+        <Navbar />
         <main>
           {children}
         </main>

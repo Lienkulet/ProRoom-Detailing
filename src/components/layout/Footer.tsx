@@ -1,8 +1,9 @@
 import RightArrowIcon from "../icons/RightArrowIcon"
-import CarIcon from "../icons/CarIcon"
 import InstagramIcon from "../icons/InstagramIcon"
 import FacebookIcon from "../icons/FacebookIcon"
 import TikTokIcon from "../icons/TikTokIcon"
+import Image from "next/image"
+const ims = "font-[family-name:var(--font-roboto-condensed)] italic font-bold uppercase";
 
 const Footer = () => {
   return (
@@ -18,10 +19,24 @@ const Footer = () => {
 
         <div className="foot-grid">
           <div className="foot-brand">
-            <a className="brand" href="#top">
-              <CarIcon />
-              Pro Room Detailing
+            <a href="/" className="flex items-center gap-3" style={{ textDecoration: "none" }}>
+              <Image
+                src="/gallery/logo.jpg"
+                alt="Pro Room Detailing logo"
+                width={60}
+                height={60}
+                className="object-contain rounded-sm"
+                style={{ height: 60, width: "auto" }}
+                priority
+              />
+              <span
+                className={`${ims} text-white hidden sm:block`}
+                style={{ fontSize: "clamp(13px, 1.3vw, 16px)", letterSpacing: "-0.01em" }}
+              >
+                Pro Room<span style={{ color: "#b0b0b0" }}> Detailing</span>
+              </span>
             </a>
+
             <p>Premium car detailing services — certified technicians, top-grade products, and flawless results, every single time.</p>
             <div className="foot-social">
               <a href="https://www.instagram.com/proroomdetailing/" target="_blank" aria-label="Instagram"><InstagramIcon /></a>
@@ -68,7 +83,7 @@ const Footer = () => {
       </div>
 
       <div className="foot-wordmark-wrap" aria-hidden="true">
-        <div className="foot-wordmark">Pro Room Detailing</div>
+        <div className="foot-wordmark">ProRoomDetailing</div>
       </div>
     </footer>
   )

@@ -5,7 +5,7 @@ const ims = "font-[family-name:var(--font-roboto-condensed)] italic font-bold up
 
 export default function GallerySection() {
   return (
-    <section style={{ backgroundColor: "#0a0a0a", overflow: "hidden" }}>
+    <section style={{ backgroundColor: "#0a0a0a", overflow: "hidden" }} id="gallery">
       <Container>
         <div className="text-center mb-10">
           <h2
