@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "services": "Services",
+    "gallery": "Gallery",
+    "testimonials": "Testimonials",
+    "contact": "Contact",
+    "bookNow": "Book Now",
+    "getQuote": "Get a quote"
+  },
+  "hero": {
+    "eyebrow": "Pro Room Detailing",
+    "headline1": "Your car,",
+    "headline2": "perfected",
+    "sub": "We offer professional detailing, ceramic coatings and paint correction. Every detail handled with precision.",
+    "bookService": "Book a service",
+    "viewServices": "View services",
+    "scroll": "Scroll"
+  },
+  "services": {
+    "title": "Services & Pricing",
+    "subtitle": "Transparent pricing — no surprises, only results.",
+    "estimate": "Estimate",
+    "viewMore": "View {{count}} more services",
+    "showLess": "Show less"
+  },
+  "about": {
+    "eyebrow": "Who we are",
+    "title": "Passion for\nperfection",
+    "body": "Pro Room Detailing was born from a simple belief: every car deserves to look its absolute best. Based in Durleşti, Moldova, our team of certified technicians combines professional-grade products with meticulous hand craftsmanship to deliver results that speak for themselves.\n\nFrom a single wash to a full ceramic coating, we treat every vehicle — and every client — with the same level of care and precision.",
+    "stat1Value": "500+",
+    "stat1Label": "Cars detailed",
+    "stat2Value": "3+",
+    "stat2Label": "Years experience",
+    "stat3Value": "100%",
+    "stat3Label": "Satisfaction rate",
+    "cta": "See our services"
+  },
+  "gallery": {
+    "title": "Our Work",
+    "subtitle": "Every detail matters — see the results for yourself."
+  },
+  "testimonials": {
+    "title": "What our clients say",
+    "subtitle": "Real reviews from real customers who trust us with their vehicles.",
+    "verified": "Verified Customer"
+  },
+  "contact": {
+    "title": "Visit Us",
+    "address": "Str. Tudor Vladimirescu 79\nDurleşti, MD-2003, Moldova",
+    "callUs": "Call us!",
+    "emailUs": "Email us!"
+  },
+  "footer": {
+    "tagline": "Your car deserves\nworld-class detail",
+    "bookNow": "Book Now",
+    "brand": "Pro Room Detailing",
+    "brandDesc": "Premium car detailing services — certified technicians, top-grade products, and flawless results, every single time.",
+    "servicesTitle": "Services",
+    "services": ["Interior Detailing", "Exterior Detailing", "Ceramic Coating", "Paint Correction"],
+    "companyTitle": "Company",
+    "company": ["About Us", "Gallery", "Reviews", "Contact"],
+    "legalTitle": "Legal",
+    "legal": ["Privacy Policy", "Terms of Service", "Booking Policy"],
+    "slogan": "Perfection in every detail.",
+    "copyright": "© 2026 Pro Room Detailing"
+  },
+  "pricelist": {
+    "polishing":       { "name": "Car Polishing",                    "price": "from 150€", "category": "Exterior", "description": "Removes scratches, swirls and paint imperfections by machine or hand polishing, restoring gloss and protecting the paintwork." },
+    "ceramic_car":     { "name": "Ceramic Coating for Car",          "price": "from 150€", "category": "Exterior", "description": "Advanced ceramic treatment that bonds to the paint surface, providing durable protection against scratches, stains and UV damage." },
+    "chemical":        { "name": "Chemical Cleaning",                "price": "from 120€", "category": "Interior", "description": "Deep cleaning of interior surfaces using professional-grade chemicals to remove stubborn dirt, stains and odours." },
+    "headlights":      { "name": "Headlight Restoration",            "price": "from 50€",  "category": "Exterior", "description": "Polishes oxidised headlight lenses to remove yellowing and haziness, significantly improving light output and appearance." },
+    "protection":      { "name": "Interior & Exterior Protection",   "price": "from 80€",  "category": "Full",     "description": "Protective treatments applied to both interior materials and exterior surfaces, guarding against wear, stains and environmental damage." },
+    "engine":          { "name": "Engine Detailing & Wash",          "price": "from 40€",  "category": "Engine",   "description": "Thorough cleaning and degreasing of the engine bay to restore appearance and protect components against corrosion." },
+    "ceramic_windows": { "name": "Ceramic Coating for Windows",      "price": "from 40€",  "category": "Exterior", "description": "Ceramic layer applied to glass surfaces that repels water, reduces glare and keeps windows cleaner for longer." },
+    "ceramic_rims":    { "name": "Ceramic Coating for Rims",         "price": "from 50€",  "category": "Exterior", "description": "Durable ceramic protection for alloy wheels, making them resistant to brake dust, road grime and minor abrasions." },
+    "wax":             { "name": "Carnauba Wax",                     "price": "from 40€",  "category": "Exterior", "description": "Natural carnauba palm wax that adds a deep, warm shine to the paintwork and provides a layer of protective gloss." },
+    "wash":            { "name": "Professional Wash",                "price": "from 30€",  "category": "Full",     "description": "Complete exterior and interior wash using specialist equipment and detailing products for a showroom-fresh finish." },
+    "leather":         { "name": "Leather Interior Restoration",     "price": "from 100€", "category": "Interior", "description": "Repairs and restores leather upholstery by removing scratches and stains, then conditioning and protecting the hide." },
+    "ozone":           { "name": "Cabin Ozone Treatment",            "price": "from 20€",  "category": "Interior", "description": "Ozone treatment that eliminates unpleasant odours, bacteria and airborne impurities from the vehicle interior." }
+  },
+  "testimonialReviews": {
+    "maria":   "The guys are great — I went in for polishing, chemical cleaning and ceramic coating. The result was outstanding, the car looked brand new. Very friendly team, highly recommended (Mercedes C-Class).",
+    "butenko": "Fast. Precise. High quality. I had my car polished and ceramic-coated, and the team threw in a free inspection and engine wash. Extremely happy with the results.",
+    "vlad":    "Excellent detailing — these guys are true professionals. Wide range of services and a personalised approach to every customer!"
+  }
+}

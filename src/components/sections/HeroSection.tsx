@@ -1,4 +1,6 @@
 'use client';
+import { useTranslation } from "react-i18next";
+import "@/i18n/config";
 import HeroButton from "@/components/UI/HeroButton";
 
 const ims = "font-[family-name:var(--font-roboto-condensed)] italic font-bold uppercase";
@@ -9,6 +11,7 @@ const fadeUp = (delay: string): React.CSSProperties => ({
 });
 
 export default function HeroSection() {
+  const { t } = useTranslation();
   return (
     <section
       className="relative flex items-center min-h-screen w-full overflow-hidden"
@@ -46,7 +49,7 @@ export default function HeroSection() {
         <div className="flex items-center gap-3 mb-6" style={fadeUp("0.1s")}>
           <div style={{ width: 32, height: 2, background: "#b0b0b0" }} />
           <span style={{ color: "#b0b0b0", fontSize: 11, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase" }}>
-            Pro Room Detailing
+            {t("hero.eyebrow")}
           </span>
         </div>
 
@@ -63,8 +66,8 @@ export default function HeroSection() {
             textShadow: "0 4px 40px rgba(0,0,0,0.5)",
           }}
         >
-          Your car,<br />
-          <span style={{ color: "#b0b0b0" }}>perfected</span>
+          {t("hero.headline1")}<br />
+          <span style={{ color: "#b0b0b0" }}>{t("hero.headline2")}</span>
         </h1>
 
         {/* Subtitle */}
@@ -78,19 +81,18 @@ export default function HeroSection() {
             maxWidth: "46ch",
           }}
         >
-          We offer professional detailing, ceramic coatings and paint correction.
-          Every detail handled with precision.
+          {t("hero.sub")}
         </p>
 
         {/* CTAs */}
         <div className="flex flex-wrap items-center gap-4 mt-10" style={fadeUp("0.58s")}>
           <HeroButton href="#contact" filled>
-            Book a service
+            {t("hero.bookService")}
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </HeroButton>
-          <HeroButton href="#services">View services</HeroButton>
+          <HeroButton href="#services">{t("hero.viewServices")}</HeroButton>
         </div>
       </div>
 
@@ -100,7 +102,7 @@ export default function HeroSection() {
         style={{ ...fadeUp("0.9s"), color: "rgba(255,255,255,0.3)", zIndex: 3 }}
       >
         <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase" }}>
-          Scroll
+          {t("hero.scroll")}
         </span>
         <svg
           width="16" height="20" viewBox="0 0 16 20" fill="none"

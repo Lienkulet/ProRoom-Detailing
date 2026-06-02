@@ -1,5 +1,7 @@
 'use client';
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import "@/i18n/config";
 import { PriceListItem } from "@/data/pricelist";
 
 const ims = "font-[family-name:var(--font-roboto-condensed)] italic font-bold uppercase";
@@ -12,6 +14,11 @@ interface Props {
 }
 
 export default function PricelistItemCard({ item, animDelay, exitDelay }: Props) {
+  const { t } = useTranslation();
+  const name     = t(`pricelist.${item.key}.name`);
+  const price    = t(`pricelist.${item.key}.price`);
+  const category = t(`pricelist.${item.key}.category`);
+  const desc     = t(`pricelist.${item.key}.description`);
   // Use framer whileInView only for initially visible items (no CSS animation active)
   const isInitial = animDelay === undefined && exitDelay === undefined;
 
@@ -49,25 +56,23 @@ export default function PricelistItemCard({ item, animDelay, exitDelay }: Props)
       {/* Left: category badge + name + description */}
       <div className="flex flex-col gap-2 flex-1 min-w-0">
         <div className="flex items-center gap-3">
-          {item.category && (
-            <span
-              style={{
-                background: "rgba(176,176,176,0.12)",
-                border: "1px solid rgba(176,176,176,0.25)",
-                color: "#b0b0b0",
-                fontSize: 10,
-                fontWeight: 700,
-                letterSpacing: "0.16em",
-                textTransform: "uppercase",
-                padding: "3px 9px",
-                borderRadius: 4,
-                whiteSpace: "nowrap",
-                flexShrink: 0,
-              }}
-            >
-              {item.category}
-            </span>
-          )}
+          <span
+            style={{
+              background: "rgba(176,176,176,0.12)",
+              border: "1px solid rgba(176,176,176,0.25)",
+              color: "#b0b0b0",
+              fontSize: 10,
+              fontWeight: 700,
+              letterSpacing: "0.16em",
+              textTransform: "uppercase",
+              padding: "3px 9px",
+              borderRadius: 4,
+              whiteSpace: "nowrap",
+              flexShrink: 0,
+            }}
+          >
+            {category}
+          </span>
           <h3
             className={ims}
             style={{
@@ -79,11 +84,11 @@ export default function PricelistItemCard({ item, animDelay, exitDelay }: Props)
               transition: "letter-spacing 0.3s ease",
             }}
           >
-            {item.name}
+            {name}
           </h3>
         </div>
 
-        {item.description && (
+        {desc && (
           <p
             style={{
               color: "rgba(255,255,255,0.35)",
@@ -98,7 +103,7 @@ export default function PricelistItemCard({ item, animDelay, exitDelay }: Props)
               maxWidth: "55ch",
             }}
           >
-            {item.description}
+            {desc}
           </p>
         )}
       </div>
@@ -115,7 +120,7 @@ export default function PricelistItemCard({ item, animDelay, exitDelay }: Props)
               textTransform: "uppercase",
             }}
           >
-            Estimate
+            {t("services.estimate")}
           </span>
           <span
             className={ims}
@@ -126,12 +131,12 @@ export default function PricelistItemCard({ item, animDelay, exitDelay }: Props)
               lineHeight: 1,
             }}
           >
-            {item.price}
+            {price}
           </span>
         </div>
 
         {/* + button */}
-        <button
+        {/* <button
           className="pricelist-plus-btn flex items-center justify-center shrink-0"
           style={{
             width: 44,
@@ -157,7 +162,7 @@ export default function PricelistItemCard({ item, animDelay, exitDelay }: Props)
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path d="M8 3v10M3 8h10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
           </svg>
-        </button>
+        </button> */}
       </div>
     </motion.div>
   );

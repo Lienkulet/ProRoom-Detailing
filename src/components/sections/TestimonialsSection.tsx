@@ -1,5 +1,7 @@
 'use client';
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import "@/i18n/config";
 import { testimonials } from "@/data/testimonials";
 import TestimonialCard from "@/components/cards/TestimonialCard";
 import Container from "@/components/layout/Container";
@@ -7,24 +9,28 @@ import Navbtn from "@/components/UI/Navbtn";
 import AnimateIn from "@/components/UI/AnimateIn";
 
 const TOTAL = testimonials.length;
-const CARD_W = 480;
 const SCALE_GHOST = 0.72;
-const SLOT_OFFSET_1 = 444;
-const SLOT_OFFSET_2 = SLOT_OFFSET_1 * 2;
-const STAGE_H = 380; 
+const MAX_CARD_W = 480;
+const STAGE_H = 400;
 
 let uid = 0;
 
 type CardItem = {
   id: number;
   idx: number;
-  slot: number; 
+  slot: number;
   ready: boolean;
 };
 
-function slotTransform(slot: number) {
+function getOffset1(cardW: number) {
+  return cardW / 2 + 28 + (cardW * SCALE_GHOST) / 2;
+}
+
+function slotTransform(slot: number, cardW: number) {
   const abs = Math.abs(slot);
-  const tx = slot === 0 ? 0 : (slot / abs) * (abs === 1 ? SLOT_OFFSET_1 : SLOT_OFFSET_2);
+  const o1 = getOffset1(cardW);
+  const o2 = o1 * 2;
+  const tx = slot === 0 ? 0 : (slot / abs) * (abs === 1 ? o1 : o2);
   const scale = abs === 0 ? 1 : abs === 1 ? SCALE_GHOST : 0.58;
   const opacity = abs === 0 ? 1 : abs === 1 ? 0.55 : 0;
   const zIndex = abs === 0 ? 10 : abs === 1 ? 5 : 1;
@@ -38,6 +44,7 @@ function mkCard(idx: number, slot: number, ready = true): CardItem {
 const ims = "font-[family-name:var(--font-roboto-condensed)] italic font-bold uppercase";
 
 export default function TestimonialsSection() {
+  const [cardW, setCardW] = useState(MAX_CARD_W);
   const [cards, setCards] = useState<CardItem[]>(() => [
     mkCard((TOTAL - 1) % TOTAL, -1),
     mkCard(0, 0),
@@ -45,6 +52,13 @@ export default function TestimonialsSection() {
   ]);
   const [centerIdx, setCenterIdx] = useState(0);
   const busy = useRef(false);
+
+  useEffect(() => {
+    const update = () => setCardW(Math.min(MAX_CARD_W, window.innerWidth - 40));
+    update();
+    window.addEventListener("resize", update, { passive: true });
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
   const navigate = useCallback(
     (dir: "next" | "prev") => {
@@ -83,6 +97,8 @@ export default function TestimonialsSection() {
     [centerIdx]
   );
 
+  const { t } = useTranslation();
+
   return (
     <section style={{ backgroundColor: "#0a0a0a", padding: "80px 0", overflow: "hidden" }} id="testimonials">
       {/* Heading */}
@@ -92,17 +108,17 @@ export default function TestimonialsSection() {
           className={`${ims} text-white leading-none`}
           style={{ fontSize: "clamp(36px, 5vw, 60px)", letterSpacing: "-0.15rem" }}
         >
-          What our clients say
+          {t("testimonials.title")}
         </h2>
         <p style={{ color: "rgba(255,255,255,0.42)", marginTop: 12, fontSize: 15 }}>
-          Real reviews from real customers who trust us with their vehicles.
+          {t("testimonials.subtitle")}
         </p>
       </AnimateIn>
 
       {/* Stage — full width so cards slide in/out at viewport edges */}
       <AnimateIn variant="fade-up" delay={0.15} style={{ position: "relative", height: STAGE_H }}>
         {cards.map((card) => {
-          const { tx, scale, opacity, zIndex } = slotTransform(card.slot);
+          const { tx, scale, opacity, zIndex } = slotTransform(card.slot, cardW);
           const isCenter = card.slot === 0;
           return (
             <div
@@ -111,8 +127,7 @@ export default function TestimonialsSection() {
                 position: "absolute",
                 left: "50%",
                 top: "50%",
-                width: CARD_W,
-                // translateX(-50%) centers the card on left:50%, then tx offsets by slot
+                width: cardW,
                 transform: `translateX(calc(-50% + ${tx}px)) translateY(-50%) scale(${scale})`,
                 opacity,
                 zIndex,

@@ -1,3 +1,6 @@
+'use client';
+import { useTranslation } from "react-i18next";
+import "@/i18n/config";
 import { Testimonial } from "@/data/testimonials";
 
 function getInitials(name: string) {
@@ -15,6 +18,8 @@ interface Props {
 }
 
 export default function TestimonialCard({ testimonial, active = true }: Props) {
+  const { t } = useTranslation();
+  const review = t(`testimonialReviews.${testimonial.key}`);
   return (
     <div
       style={{
@@ -61,7 +66,7 @@ export default function TestimonialCard({ testimonial, active = true }: Props) {
           transition: "color 0.4s ease",
         }}
       >
-        {testimonial.review}
+        {review}
       </p>
 
       {/* Author */}
@@ -115,7 +120,7 @@ export default function TestimonialCard({ testimonial, active = true }: Props) {
               transition: "color 0.4s ease",
             }}
           >
-            Verified Customer
+            {t("testimonials.verified")}
           </p>
         </div>
       </div>

@@ -230,6 +230,10 @@ body {
     padding-left: 24px;
     padding-right: 24px;
   }
+
+  .foot-wordmark {
+    font-size: 40px;
+  }
 }
 
 /* ============ PRICELIST CARD ============ */

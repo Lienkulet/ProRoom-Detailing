@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "services": "Servicii",
+    "gallery": "Galerie",
+    "testimonials": "Recenzii",
+    "contact": "Contact",
+    "bookNow": "Rezervă",
+    "getQuote": "Solicită ofertă"
+  },
+  "hero": {
+    "eyebrow": "Pro Room Detailing",
+    "headline1": "Mașina ta,",
+    "headline2": "perfectată",
+    "sub": "Oferim detailing profesional, acoperiri ceramice și corecție vopsea. Fiecare detaliu tratat cu precizie.",
+    "bookService": "Rezervă serviciu",
+    "viewServices": "Vezi servicii",
+    "scroll": "Derulează"
+  },
+  "services": {
+    "title": "Servicii & Prețuri",
+    "subtitle": "Prețuri transparente — fără surprize, doar rezultate.",
+    "estimate": "Estimare",
+    "viewMore": "Vezi încă {{count}} servicii",
+    "showLess": "Arată mai puțin"
+  },
+  "about": {
+    "eyebrow": "Cine suntem",
+    "title": "Pasiune pentru\nperfecțiune",
+    "body": "Pro Room Detailing s-a născut dintr-o convingere simplă: fiecare mașină merită să arate impecabil. Cu sediul în Durleşti, Moldova, echipa noastră de tehnicieni certificați îmbină produse profesionale cu măiestrie manuală meticuloasă pentru rezultate care vorbesc de la sine.\n\nDe la o spălare simplă la un tratament ceramic complet, tratăm fiecare vehicul — și fiecare client — cu același nivel de grijă și precizie.",
+    "stat1Value": "500+",
+    "stat1Label": "Mașini detaliate",
+    "stat2Value": "3+",
+    "stat2Label": "Ani de experiență",
+    "stat3Value": "100%",
+    "stat3Label": "Clienți mulțumiți",
+    "cta": "Vezi serviciile noastre"
+  },
+  "gallery": {
+    "title": "Lucrările Noastre",
+    "subtitle": "Fiecare detaliu contează — vezi rezultatele cu ochii tăi."
+  },
+  "testimonials": {
+    "title": "Ce spun clienții noștri",
+    "subtitle": "Recenzii reale de la clienți care ne încredințează vehiculele lor.",
+    "verified": "Client verificat"
+  },
+  "contact": {
+    "title": "Vizitează-ne",
+    "address": "Str. Tudor Vladimirescu 79\nDurleşti, MD-2003, Moldova",
+    "callUs": "Sună-ne!",
+    "emailUs": "Scrie-ne!"
+  },
+  "footer": {
+    "tagline": "Mașina ta merită\ndetailing de top",
+    "bookNow": "Rezervă",
+    "brand": "Pro Room Detailing",
+    "brandDesc": "Servicii premium de detailing — tehnicieni certificați, produse de top și rezultate impecabile, de fiecare dată.",
+    "servicesTitle": "Servicii",
+    "services": ["Detailing Interior", "Detailing Exterior", "Acoperire Ceramică", "Corecție Vopsea"],
+    "companyTitle": "Companie",
+    "company": ["Despre Noi", "Galerie", "Recenzii", "Contact"],
+    "legalTitle": "Legal",
+    "legal": ["Politica de Confidențialitate", "Termeni și Condiții", "Politica de Rezervare"],
+    "slogan": "Perfecțiune în fiecare detaliu.",
+    "copyright": "© 2026 Pro Room Detailing"
+  },
+  "pricelist": {
+    "polishing":       { "name": "Polișare automobil",                        "price": "de la 150€", "category": "Exterior", "description": "Îndepărtarea zgârieturilor, petelor și imperfecțiunilor vopselei prin polișare manuală sau mecanizată, restabilind strălucirea și protejând vopseaua." },
+    "ceramic_car":     { "name": "Protecție ceramică pentru automobil",       "price": "de la 150€", "category": "Exterior", "description": "Tratament ceramic avansat care se leagă de suprafața vopselei, oferind protecție durabilă împotriva zgârieturilor, petelor și razelor UV." },
+    "chemical":        { "name": "Curătare chimică",                          "price": "de la 120€", "category": "Interior", "description": "Curățare profundă a suprafețelor interioare cu substanțe chimice profesionale pentru îndepărtarea murdăriei, petelor și mirosurilor persistente." },
+    "headlights":      { "name": "Polisare faruri",                           "price": "de la 50€",  "category": "Exterior", "description": "Polisarea lentilelor oxidate ale farurilor pentru eliminarea îngălbenirii și opacității, îmbunătățind semnificativ lumina și aspectul." },
+    "protection":      { "name": "Protecție elemente interior și exterior",   "price": "de la 80€",  "category": "Full",     "description": "Tratamente protective aplicate atât materialelor interioare cât și suprafețelor exterioare, protejând împotriva uzurii, petelor și factorilor de mediu." },
+    "engine":          { "name": "Detailing și spălare motor",                "price": "de la 40€",  "category": "Motor",    "description": "Curățarea și degresarea completă a compartimentului motorului pentru a restabili aspectul și proteja componentele împotriva coroziunii." },
+    "ceramic_windows": { "name": "Protecție ceramică pentru geamuri",         "price": "de la 40€",  "category": "Exterior", "description": "Strat ceramic aplicat pe suprafețele de sticlă care respinge apa, reduce reflexiile și menține geamurile curate mai mult timp." },
+    "ceramic_rims":    { "name": "Protecție ceramică pentru jante",           "price": "de la 50€",  "category": "Exterior", "description": "Protecție ceramică durabilă pentru jantele din aliaj, rezistentă la praful de frânare, murdăria de drum și abraziunile minore." },
+    "wax":             { "name": "Carnauba WAX",                              "price": "de la 40€",  "category": "Exterior", "description": "Ceară naturală din palmier de carnauba care adaugă o strălucire profundă și caldă vopselei, oferind un strat de protecție lucioasă." },
+    "wash":            { "name": "Spălare profesională",                      "price": "de la 30€",  "category": "Full",     "description": "Spălare completă exterior și interior cu echipamente specializate și produse de detailing pentru un finisaj impecabil." },
+    "leather":         { "name": "Refacerea tapițeriei interioare din piele", "price": "de la 100€", "category": "Interior", "description": "Repararea și restaurarea tapițeriei din piele prin îndepărtarea zgârieturilor și petelor, apoi condiționarea și protejarea materialului." },
+    "ozone":           { "name": "Ozonarea salonului automobilului",          "price": "de la 20€",  "category": "Interior", "description": "Tratament cu ozon care elimină mirosurile neplăcute, bacteriile și impuritățile din aerul din interiorul vehiculului." }
+  },
+  "testimonialReviews": {
+    "maria":   "Băieții sunt grozavi, am mers la lustruire, curățătorie chimică, ceramică, rezultatul a fost surprinzător, mașina a devenit ca nouă și plăcută ochiului, o echipă foarte plăcută, băieți tineri, sunt mulțumit (Mercedes clasa C).",
+    "butenko": "Rapid. Precis. Calitate înaltă. Mi-am lustruit mașina și am aplicat un strat ceramic, iar băieții mi-au oferit o inspecție gratuită și o spălare a motorului. Am fost foarte mulțumiți de rezultate.",
+    "vlad":    "Detalierea excelentă, acești tipi sunt adevărați profesioniști. Gamă largă de servicii și o abordare personalizată a fiecărui client!"
+  }
+}

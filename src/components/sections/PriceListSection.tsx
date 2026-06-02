@@ -1,5 +1,7 @@
 'use client';
 import { useState, useRef } from "react";
+import { useTranslation } from "react-i18next";
+import "@/i18n/config";
 import { priceList } from "@/data/pricelist";
 import PricelistItemCard from "@/components/cards/PricelistItemCard";
 import Container from "@/components/layout/Container";
@@ -9,6 +11,7 @@ const ims = "font-[family-name:var(--font-roboto-condensed)] italic font-bold up
 const INITIAL_COUNT = 5;
 
 export default function PricelistSection() {
+  const { t } = useTranslation();
   const [expanded, setExpanded] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -41,17 +44,17 @@ export default function PricelistSection() {
             className={`${ims} text-white leading-none`}
             style={{ fontSize: "clamp(36px, 5vw, 60px)", letterSpacing: "-0.15rem" }}
           >
-            Services & Pricing
+            {t("services.title")}
           </h2>
           <p style={{ color: "rgba(255,255,255,0.42)", marginTop: 12, fontSize: 15 }}>
-            Transparent pricing — no surprises, only results.
+            {t("services.subtitle")}
           </p>
         </AnimateIn>
 
         <div style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
           {visible.map((item, i) => (
             <PricelistItemCard
-              key={item.name}
+              key={item.key}
               item={item}
               index={i}
               animDelay={expanded && i >= INITIAL_COUNT ? (i - INITIAL_COUNT) * 70 : undefined}
@@ -92,7 +95,7 @@ export default function PricelistSection() {
                 (e.currentTarget as HTMLButtonElement).style.boxShadow = "none";
               }}
             >
-              <span>View {remaining} more services</span>
+              <span>{t("services.viewMore", { count: remaining })}</span>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 6l5 5 5-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -126,7 +129,7 @@ export default function PricelistSection() {
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 10l5-5 5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <span>Show less</span>
+              <span>{t("services.showLess")}</span>
             </button>
           </div>
         )}
