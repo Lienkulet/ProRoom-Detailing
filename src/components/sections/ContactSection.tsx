@@ -13,25 +13,15 @@ export default function ContactSection() {
       className="w-full bg-cover bg-center bg-no-repeat py-16 px-4"
       style={{ backgroundImage: "url('/bg-contact.png')" }}
     >
-      <section className="flex flex-col md:flex-row max-w-[1180px] mx-auto border border-[#414141]">
+      <section className="flex flex-col gap-4 md:flex-row max-w-[1180px] mx-auto p-4 border border-[#414141]">
 
         {/* Map */}
-        <div className="relative w-full md:w-[40%] min-h-[360px] md:min-h-[427px]">
+        <div className="relative w-full md:w-[30%] min-h-[360px] md:min-h-[427px]">
           <ContactMap />
         </div>
 
         {/* Info — matches IMS .block---location-contain */}
-        <div className="flex flex-col justify-start w-full md:w-[60%] overflow-hidden"
-          style={{
-            backgroundColor: "#0a0a0a",
-            backgroundImage: [
-              "radial-gradient(ellipse at 15% 85%, rgba(32,32,32,0.9) 0%, transparent 45%)",
-              "radial-gradient(ellipse at 80% 10%, rgba(28,28,28,0.85) 0%, transparent 40%)",
-              "radial-gradient(ellipse at 60% 60%, rgba(24,24,24,0.8) 0%, transparent 50%)",
-              "radial-gradient(ellipse at 90% 75%, rgba(30,30,30,0.75) 0%, transparent 38%)",
-              "radial-gradient(ellipse at 30% 30%, rgba(26,26,26,0.75) 0%, transparent 42%)",
-            ].join(", "),
-          }}
+        <div className="flex flex-col justify-start w-full md:w-[70%] overflow-hidden backdrop-blur-md"
         >
           {/* Address block */}
           <div className="flex flex-col gap-3 px-8 pt-8 pb-6">
