@@ -3,22 +3,25 @@ import InstagramIcon from "../icons/InstagramIcon"
 import FacebookIcon from "../icons/FacebookIcon"
 import TikTokIcon from "../icons/TikTokIcon"
 import Image from "next/image"
+import AnimateIn from "@/components/UI/AnimateIn"
+
 const ims = "font-[family-name:var(--font-roboto-condensed)] italic font-bold uppercase";
 
 const Footer = () => {
   return (
     <footer className="footer" id="book">
       <div className="footer-content">
-        <div className="foot-cta">
+
+        <AnimateIn variant="fade-up" className="foot-cta">
           <h2>Your car deserves<br />world-class detail</h2>
           <a className="foot-cta-btn" href="#book">
             Book Now
             <RightArrowIcon />
           </a>
-        </div>
+        </AnimateIn>
 
         <div className="foot-grid">
-          <div className="foot-brand">
+          <AnimateIn variant="fade-up" delay={0.05} className="foot-brand">
             <a href="/" className="flex items-center gap-3" style={{ textDecoration: "none" }}>
               <Image
                 src="/gallery/logo.jpg"
@@ -36,16 +39,15 @@ const Footer = () => {
                 Pro Room<span style={{ color: "#b0b0b0" }}> Detailing</span>
               </span>
             </a>
-
             <p>Premium car detailing services — certified technicians, top-grade products, and flawless results, every single time.</p>
             <div className="foot-social">
               <a href="https://www.instagram.com/proroomdetailing/" target="_blank" aria-label="Instagram"><InstagramIcon /></a>
               <a href="https://www.facebook.com/people/PRO-ROOM-Detailing/61574453804967/" target="_blank" aria-label="Facebook"><FacebookIcon /></a>
               <a href="https://www.tiktok.com/@proroomdetailing_" target="_blank" aria-label="TikTok"><TikTokIcon /></a>
             </div>
-          </div>
+          </AnimateIn>
 
-          <div className="foot-col">
+          <AnimateIn variant="fade-up" delay={0.15} className="foot-col">
             <h4>Services</h4>
             <ul>
               <li><a href="#services">Interior Detailing</a></li>
@@ -53,9 +55,9 @@ const Footer = () => {
               <li><a href="#services">Ceramic Coating</a></li>
               <li><a href="#services">Paint Correction</a></li>
             </ul>
-          </div>
+          </AnimateIn>
 
-          <div className="foot-col">
+          <AnimateIn variant="fade-up" delay={0.25} className="foot-col">
             <h4>Company</h4>
             <ul>
               <li><a href="#about">About Us</a></li>
@@ -63,23 +65,23 @@ const Footer = () => {
               <li><a href="#reviews">Reviews</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
-          </div>
+          </AnimateIn>
 
-          <div className="foot-col">
+          <AnimateIn variant="fade-up" delay={0.35} className="foot-col">
             <h4>Legal</h4>
             <ul>
               <li><a href="#">Privacy Policy</a></li>
               <li><a href="#">Terms of Service</a></li>
               <li><a href="#">Booking Policy</a></li>
             </ul>
-          </div>
+          </AnimateIn>
         </div>
 
         <div className="foot-divider" />
-        <div className="foot-bottom">
+        <AnimateIn variant="fade-in" delay={0.2} className="foot-bottom">
           <span>Perfection in every detail.</span>
           <span>© 2026 Pro Room Detailing</span>
-        </div>
+        </AnimateIn>
       </div>
 
       <div className="foot-wordmark-wrap" aria-hidden="true">

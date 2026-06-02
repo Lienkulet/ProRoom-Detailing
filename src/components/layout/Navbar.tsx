@@ -1,15 +1,16 @@
 'use client';
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 import HeroButton from "@/components/UI/HeroButton";
 
 const ims = "font-[family-name:var(--font-roboto-condensed)] italic font-bold uppercase";
 
 const links = [
-  { label: "Services", href: "#services" },
-  { label: "Gallery",  href: "#gallery"  },
-  { label: "Testimonials",  href: "#testimonials"  },
-  { label: "Contact",  href: "#contact"  },
+  { label: "Services",     href: "#services"     },
+  { label: "Gallery",      href: "#gallery"      },
+  { label: "Testimonials", href: "#testimonials" },
+  { label: "Contact",      href: "#contact"      },
 ];
 
 export default function Navbar() {
@@ -23,12 +24,13 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header
+    <motion.header
       className="fixed top-0 inset-x-0 z-50"
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
       style={{
-        background: scrolled
-          ? "rgba(8,8,8,0.88)"
-          : "transparent",
+        background: scrolled ? "rgba(8,8,8,0.88)" : "transparent",
         backdropFilter: scrolled ? "blur(14px)" : "none",
         borderBottom: scrolled ? "1px solid rgba(255,255,255,0.07)" : "1px solid transparent",
         transition: "background 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease",
@@ -37,7 +39,14 @@ export default function Navbar() {
       <div className="max-w-350 mx-auto px-5 md:px-10 flex items-center justify-between h-16 md:h-20">
 
         {/* Logo */}
-        <a href="/" className="flex items-center gap-3" style={{ textDecoration: "none" }}>
+        <motion.a
+          href="/"
+          className="flex items-center gap-3"
+          style={{ textDecoration: "none" }}
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.35 }}
+        >
           <Image
             src="/gallery/logo.jpg"
             alt="Pro Room Detailing logo"
@@ -53,14 +62,17 @@ export default function Navbar() {
           >
             Pro Room<span style={{ color: "#b0b0b0" }}> Detailing</span>
           </span>
-        </a>
+        </motion.a>
 
         {/* Desktop nav links */}
         <nav className="hidden md:flex items-center gap-8">
-          {links.map((l) => (
-            <a
+          {links.map((l, i) => (
+            <motion.a
               key={l.href}
               href={l.href}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: 0.4 + i * 0.07 }}
               style={{
                 color: "rgba(255,255,255,0.62)",
                 fontSize: 14,
@@ -73,81 +85,90 @@ export default function Navbar() {
               onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.62)"; }}
             >
               {l.label}
-            </a>
+            </motion.a>
           ))}
         </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden md:block">
-          <HeroButton href="#contact" filled>
-            Book Now
-          </HeroButton>
-        </div>
+        <motion.div
+          className="hidden md:block"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.7 }}
+        >
+          <HeroButton href="#contact" filled>Book Now</HeroButton>
+        </motion.div>
 
         {/* Mobile hamburger */}
-        <button
+        <motion.button
           className="md:hidden flex flex-col justify-center gap-1.5 w-8 h-8"
           onClick={() => setMenuOpen((v) => !v)}
           aria-label="Toggle menu"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
           style={{ background: "none", border: "none", cursor: "pointer", padding: 0 }}
         >
-          <span
-            style={{
-              display: "block", height: 1.5, background: "#fff", borderRadius: 2,
-              transition: "transform 0.3s ease, opacity 0.3s ease",
-              transform: menuOpen ? "translateY(5px) rotate(45deg)" : "none",
-            }}
-          />
-          <span
-            style={{
-              display: "block", height: 1.5, background: "#fff", borderRadius: 2,
-              transition: "opacity 0.3s ease",
-              opacity: menuOpen ? 0 : 1,
-            }}
-          />
-          <span
-            style={{
-              display: "block", height: 1.5, background: "#fff", borderRadius: 2,
-              transition: "transform 0.3s ease, opacity 0.3s ease",
-              transform: menuOpen ? "translateY(-5px) rotate(-45deg)" : "none",
-            }}
-          />
-        </button>
+          <span style={{
+            display: "block", height: 1.5, background: "#fff", borderRadius: 2,
+            transition: "transform 0.3s ease, opacity 0.3s ease",
+            transform: menuOpen ? "translateY(5px) rotate(45deg)" : "none",
+          }} />
+          <span style={{
+            display: "block", height: 1.5, background: "#fff", borderRadius: 2,
+            transition: "opacity 0.3s ease",
+            opacity: menuOpen ? 0 : 1,
+          }} />
+          <span style={{
+            display: "block", height: 1.5, background: "#fff", borderRadius: 2,
+            transition: "transform 0.3s ease, opacity 0.3s ease",
+            transform: menuOpen ? "translateY(-5px) rotate(-45deg)" : "none",
+          }} />
+        </motion.button>
       </div>
 
       {/* Mobile menu */}
-      <div
-        style={{
-          maxHeight: menuOpen ? 400 : 0,
-          overflow: "hidden",
-          transition: "max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
-          background: "rgba(8,8,8,0.96)",
-          backdropFilter: "blur(14px)",
-          borderTop: menuOpen ? "1px solid rgba(255,255,255,0.07)" : "1px solid transparent",
-        }}
-      >
-        <nav className="flex flex-col px-5 py-6 gap-5">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setMenuOpen(false)}
-              className={`${ims} text-white`}
-              style={{
-                fontSize: 22,
-                textDecoration: "none",
-                letterSpacing: "-0.02em",
-                color: "rgba(255,255,255,0.8)",
-              }}
-            >
-              {l.label}
-            </a>
-          ))}
-          <div className="pt-2">
-            <HeroButton href="#contact" filled>Get a quote</HeroButton>
-          </div>
-        </nav>
-      </div>
-    </header>
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            style={{
+              overflow: "hidden",
+              background: "rgba(8,8,8,0.96)",
+              backdropFilter: "blur(14px)",
+              borderTop: "1px solid rgba(255,255,255,0.07)",
+            }}
+          >
+            <nav className="flex flex-col px-5 py-6 gap-5">
+              {links.map((l, i) => (
+                <motion.a
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setMenuOpen(false)}
+                  className={`${ims} text-white`}
+                  initial={{ opacity: 0, x: -16 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1], delay: i * 0.06 }}
+                  style={{ fontSize: 22, textDecoration: "none", letterSpacing: "-0.02em", color: "rgba(255,255,255,0.8)" }}
+                >
+                  {l.label}
+                </motion.a>
+              ))}
+              <motion.div
+                className="pt-2"
+                initial={{ opacity: 0, x: -16 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1], delay: links.length * 0.06 }}
+              >
+                <HeroButton href="#contact" filled>Get a quote</HeroButton>
+              </motion.div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
   );
 }

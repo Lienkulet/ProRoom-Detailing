@@ -1,4 +1,5 @@
 'use client';
+import { motion } from "framer-motion";
 import { PriceListItem } from "@/data/pricelist";
 
 const ims = "font-[family-name:var(--font-roboto-condensed)] italic font-bold uppercase";
@@ -11,8 +12,11 @@ interface Props {
 }
 
 export default function PricelistItemCard({ item, animDelay, exitDelay }: Props) {
+  // Use framer whileInView only for initially visible items (no CSS animation active)
+  const isInitial = animDelay === undefined && exitDelay === undefined;
+
   return (
-    <div
+    <motion.div
       className={`group flex items-center gap-6 py-7 px-2${
         exitDelay !== undefined
           ? " pricelist-item-exit"
@@ -29,6 +33,12 @@ export default function PricelistItemCard({ item, animDelay, exitDelay }: Props)
           ? { animationDelay: `${animDelay}ms` }
           : {}),
       }}
+      {...(isInitial && {
+        initial: { opacity: 0, y: 20 },
+        whileInView: { opacity: 1, y: 0 },
+        viewport: { once: true, amount: 0.2 },
+        transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+      })}
       onMouseEnter={(e) => {
         (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.2)";
       }}
@@ -149,6 +159,6 @@ export default function PricelistItemCard({ item, animDelay, exitDelay }: Props)
           </svg>
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 }

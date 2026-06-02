@@ -2,6 +2,7 @@
 import dynamic from "next/dynamic"
 import PhoneIcon from "../icons/PhoneIcon"
 import MailIcon from "../icons/MailIcon"
+import AnimateIn from "@/components/UI/AnimateIn"
 
 const ContactMap = dynamic(() => import("../UI/ContactMap"), { ssr: false })
 
@@ -17,12 +18,12 @@ export default function ContactSection() {
       <section className="flex flex-col gap-4 md:flex-row max-w-[1180px] mx-auto p-4 border border-[#414141]">
 
         {/* Map */}
-        <div className="relative w-full md:w-[30%] min-h-[360px] md:min-h-[427px]">
+        <AnimateIn variant="slide-left" className="relative w-full md:w-[30%] min-h-[360px] md:min-h-[427px]">
           <ContactMap />
-        </div>
+        </AnimateIn>
 
-        {/* Info — matches IMS .block---location-contain */}
-        <div className="flex flex-col justify-start w-full md:w-[70%] overflow-hidden backdrop-blur-md"
+        {/* Info */}
+        <AnimateIn variant="slide-right" delay={0.15} className="flex flex-col justify-start w-full md:w-[70%] overflow-hidden backdrop-blur-md"
         >
           {/* Address block */}
           <div className="flex flex-col gap-3 px-8 pt-8 pb-6">
@@ -93,7 +94,7 @@ export default function ContactSection() {
             </a>
           </div>
 
-        </div>
+        </AnimateIn>
       </section>
     </div>
   )

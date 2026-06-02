@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 import { priceList } from "@/data/pricelist";
 import PricelistItemCard from "@/components/cards/PricelistItemCard";
 import Container from "@/components/layout/Container";
+import AnimateIn from "@/components/UI/AnimateIn";
 
 const ims = "font-[family-name:var(--font-roboto-condensed)] italic font-bold uppercase";
 const INITIAL_COUNT = 5;
@@ -35,7 +36,7 @@ export default function PricelistSection() {
       id="services"
     >
       <Container>
-        <div className="text-center mb-10">
+        <AnimateIn variant="fade-up" className="text-center mb-10">
           <h2
             className={`${ims} text-white leading-none`}
             style={{ fontSize: "clamp(36px, 5vw, 60px)", letterSpacing: "-0.15rem" }}
@@ -45,7 +46,7 @@ export default function PricelistSection() {
           <p style={{ color: "rgba(255,255,255,0.42)", marginTop: 12, fontSize: 15 }}>
             Transparent pricing — no surprises, only results.
           </p>
-        </div>
+        </AnimateIn>
 
         <div style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
           {visible.map((item, i) => (

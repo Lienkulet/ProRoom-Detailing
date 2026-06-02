@@ -4,6 +4,7 @@ import { testimonials } from "@/data/testimonials";
 import TestimonialCard from "@/components/cards/TestimonialCard";
 import Container from "@/components/layout/Container";
 import Navbtn from "@/components/UI/Navbtn";
+import AnimateIn from "@/components/UI/AnimateIn";
 
 const TOTAL = testimonials.length;
 const CARD_W = 480;
@@ -86,7 +87,7 @@ export default function TestimonialsSection() {
     <section style={{ backgroundColor: "#0a0a0a", padding: "80px 0", overflow: "hidden" }} id="testimonials">
       {/* Heading */}
       <Container>
-      <div className=" text-center" style={{ marginBottom: 56 }}>
+      <AnimateIn variant="fade-up" className="text-center" style={{ marginBottom: 56 }}>
         <h2
           className={`${ims} text-white leading-none`}
           style={{ fontSize: "clamp(36px, 5vw, 60px)", letterSpacing: "-0.15rem" }}
@@ -96,10 +97,10 @@ export default function TestimonialsSection() {
         <p style={{ color: "rgba(255,255,255,0.42)", marginTop: 12, fontSize: 15 }}>
           Real reviews from real customers who trust us with their vehicles.
         </p>
-      </div>
+      </AnimateIn>
 
       {/* Stage — full width so cards slide in/out at viewport edges */}
-      <div style={{ position: "relative", height: STAGE_H }}>
+      <AnimateIn variant="fade-up" delay={0.15} style={{ position: "relative", height: STAGE_H }}>
         {cards.map((card) => {
           const { tx, scale, opacity, zIndex } = slotTransform(card.slot);
           const isCenter = card.slot === 0;
@@ -126,18 +127,16 @@ export default function TestimonialsSection() {
             </div>
           );
         })}
-      </div>
+      </AnimateIn>
 
       {/* Navigation */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: 20,
-          marginTop: 40,
-        }}
-      >
+      <AnimateIn variant="fade-up" delay={0.3} style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 20,
+        marginTop: 40,
+      }}>
         <Navbtn onClick={() => navigate("prev")} dir="prev" />
         <span
           style={{
@@ -151,7 +150,7 @@ export default function TestimonialsSection() {
           {centerIdx + 1} / {TOTAL}
         </span>
         <Navbtn onClick={() => navigate("next")} dir="next" />
-      </div>
+      </AnimateIn>
       </Container>
     </section>
   );

@@ -283,6 +283,36 @@ body {
   50%       { transform: translateY(5px); opacity: 0.7; }
 }
 
+/* ============ SCROLL ANIMATIONS ============ */
+@keyframes anim-fade-up {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes anim-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes anim-slide-left {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes anim-slide-right {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes hero-ken-burns {
+  0%   { transform: scale(1)    translateX(0)      translateY(0); }
+  50%  { transform: scale(1.06) translateX(-1%)    translateY(-0.5%); }
+  100% { transform: scale(1.1)  translateX(0.5%)   translateY(-1%); }
+}
+
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
 /* Shared base */
 .hero-btn {
   position: relative;
