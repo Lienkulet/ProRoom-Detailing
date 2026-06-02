@@ -386,3 +386,8 @@ body {
   height: 100%;
   min-height: 420px;
 }
+
+/* Contain Leaflet's high internal z-indices within the map wrapper */
+.contact-map-wrap {
+  isolation: isolate;
+}
