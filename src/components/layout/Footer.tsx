@@ -24,9 +24,9 @@ const Footer = () => {
             </a>
             <p>Premium car detailing services — certified technicians, top-grade products, and flawless results, every single time.</p>
             <div className="foot-social">
-              <a href="#" aria-label="Instagram"><InstagramIcon /></a>
-              <a href="#" aria-label="Facebook"><FacebookIcon /></a>
-              <a href="#" aria-label="TikTok"><TikTokIcon /></a>
+              <a href="https://www.instagram.com/proroomdetailing/" target="_blank" aria-label="Instagram"><InstagramIcon /></a>
+              <a href="https://www.facebook.com/people/PRO-ROOM-Detailing/61574453804967/" target="_blank" aria-label="Facebook"><FacebookIcon /></a>
+              <a href="https://www.tiktok.com/@proroomdetailing_" target="_blank" aria-label="TikTok"><TikTokIcon /></a>
             </div>
           </div>
 

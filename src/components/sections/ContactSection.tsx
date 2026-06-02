@@ -3,7 +3,7 @@ import dynamic from "next/dynamic"
 import PhoneIcon from "../icons/PhoneIcon"
 import MailIcon from "../icons/MailIcon"
 
-const ContactMap = dynamic(() => import("./ContactMap"), { ssr: false })
+const ContactMap = dynamic(() => import("../UI/ContactMap"), { ssr: false })
 
 const ims = "font-[family-name:var(--font-roboto-condensed)] italic font-bold uppercase"
 
