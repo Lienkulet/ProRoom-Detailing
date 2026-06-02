@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Roboto_Condensed } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/layout/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -10,6 +11,13 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const robotoCond = Roboto_Condensed({
+  variable: "--font-roboto-condensed",
+  subsets: ["latin"],
+  weight: ["700"],
+  style: ["italic", "normal"],
 });
 
 export const metadata: Metadata = {
@@ -25,9 +33,23 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${robotoCond.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body 
+      // style={{
+      //   backgroundColor: "#0a0a0a",
+      //   backgroundImage: [
+      //     "radial-gradient(ellipse at 15% 85%, rgba(32,32,32,0.9) 0%, transparent 45%)",
+      //     "radial-gradient(ellipse at 80% 10%, rgba(28,28,28,0.85) 0%, transparent 40%)",
+      //     "radial-gradient(ellipse at 60% 60%, rgba(24,24,24,0.8) 0%, transparent 50%)",
+      //     "radial-gradient(ellipse at 90% 75%, rgba(30,30,30,0.75) 0%, transparent 38%)",
+      //     "radial-gradient(ellipse at 30% 30%, rgba(26,26,26,0.75) 0%, transparent 42%)",
+      //   ].join(", "),
+      // }}
+      >
+          {children}
+        <Footer />
+      </body>
     </html>
   );
 }
