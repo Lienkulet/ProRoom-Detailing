@@ -232,6 +232,22 @@ body {
   }
 }
 
+/* ============ TESTIMONIAL ANIMATIONS ============ */
+@keyframes testimonial-slide-in-right {
+  from { opacity: 0; transform: translateX(48px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes testimonial-slide-in-left {
+  from { opacity: 0; transform: translateX(-48px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.testimonial-enter-right {
+  animation: testimonial-slide-in-right 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.testimonial-enter-left {
+  animation: testimonial-slide-in-left 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 /* leaflet map fill */
 .contact-map-wrap,
 .contact-map-wrap .leaflet-container {
