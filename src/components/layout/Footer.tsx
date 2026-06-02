@@ -68,7 +68,7 @@ const Footer = () => {
       </div>
 
       <div className="foot-wordmark-wrap" aria-hidden="true">
-        <div className="foot-wordmark">ProRoom Detailing</div>
+        <div className="foot-wordmark">Pro Room Detailing</div>
       </div>
     </footer>
   )
